@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  tsc-watch:
+    image: node:latest
+    command: bash -c "yarn install && yarn tsc-watch --onSuccess \"yarn node dist/index.js\""
+    working_dir: /app
+    volumes:
+      - .:/app:cached
